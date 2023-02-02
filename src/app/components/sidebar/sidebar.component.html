@@ -40,13 +40,17 @@
   </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a *ngIf="menuItem.title=='Recursos'" class="nav-link" [routerLink]="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>
             </a>
-            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink" *ngIf="menuItem.title=='Dashboard'">
-                <a class="dropdown-item" href="#">Privados</a>
-                <a class="dropdown-item" href="#">Públicos</a>
+            <a *ngIf="menuItem.title!='Recursos'" class="nav-link" [routerLink]="[menuItem.path]" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink" *ngIf="menuItem.title=='Recursos'">
+                <a class="dropdown-item" [routerLink]="[menuItem.path, 'PR']">Privados</a>
+                <a class="dropdown-item" [routerLink]="[menuItem.path, 'PU']">Públicos</a>
             </div>
         </li>
     </ul>
