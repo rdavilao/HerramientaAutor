@@ -1,0 +1,23 @@
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">ACTIVITEA</label>
+					<input type="email" name="email" autocomplete="true" placeholder="Email" required="true" [(ngModel)]="loginRQ.email">
+					<input type="password" name="pswd" autocomplete="true" placeholder="Contraseña" required="true" [(ngModel)]="loginRQ.pwd">
+					<button (click)="log()">Ingresar</button>
+				</form>
+			</div>
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Registrarse</label>
+					<input type="email" name="email" autocomplete="true" placeholder="Email" required="true" [(ngModel)]="newUser.email">
+					<input type="password" name="pswd" placeholder="Contraseña" required="true" [(ngModel)]="newUser.password">
+                    <input type="password" name="pswdConfirm" placeholder="Confirmar contraseña" required="true" [(ngModel)]="pwdConfirm">
+					<button (click)="signIn()">Registrar</button>
+				</form>
+			</div>
+	</div>
+</body>

@@ -134,4 +134,11 @@ export class NavbarComponent implements OnInit {
         return 'Recursos - Privados';
       }
     }
+
+    logOut(): void {
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('pwd');
+        sessionStorage.removeItem('accountType');
+        location.reload();
+    }
 }
