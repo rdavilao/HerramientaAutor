@@ -8,13 +8,11 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Recursos',  icon: 'dashboard', class: '' },
+    { path: '/resources', title: 'Recursos',  icon: 'dashboard', class: '' },
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
 ];
-
-//{ path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
 
 @Component({
   selector: 'app-sidebar',
@@ -35,4 +33,10 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+  logOut(): void {
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('pwd');
+    sessionStorage.removeItem('accountType');
+    location.reload();
+}
 }

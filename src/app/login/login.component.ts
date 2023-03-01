@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('email', data.email);
     sessionStorage.setItem('pwd', data.password);
     sessionStorage.setItem('accountType', data.accountType);
-    this.router.navigate(["/dashboard/PU"]);
+    this.router.navigate(["/resources/PU"]);
   }
 
   signIn(): void {

@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder,Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
+import { ROUTES } from 'app/components/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-typography',
-  templateUrl: './typography.component.html',
-  styleUrls: ['./typography.component.css']
+  selector: 'app-resources',
+  templateUrl: './resources.component.html',
+  styleUrls: ['./resources.component.css']
 })
-export class TypographyComponent implements OnInit {
+export class ResourcesComponent implements OnInit {
+
+  private listTitles: any[];
+  location: Location;
 
   typeR: string;
   visibilityR: string;
@@ -39,9 +44,29 @@ export class TypographyComponent implements OnInit {
   sopaLetras = this.formBuilder.array([]);
   pistasSL:boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) { }
+  constructor(location: Location, private formBuilder: FormBuilder, private dialog: MatDialog) {
+    this.location = location;
+   }
 
   ngOnInit() {
+    this.listTitles = ROUTES.filter(listTitle => listTitle);
+  }
+
+  getTitle(){
+    var titlee = this.location.prepareExternalUrl(this.location.path());
+    if(titlee.charAt(0) === '#'){
+        titlee = titlee.slice( 1 );
+    }    
+    var typeResource = titlee.split("/");
+    if(typeResource[2] == "PU") {
+      return 'PU';
+    }
+    if(typeResource[2] == "PR") {        
+      return 'PR';
+    }
+    if(typeResource[2] == "add") {        
+      return 'AD';
+    }
   }
 
   addDataSopaLetras() {

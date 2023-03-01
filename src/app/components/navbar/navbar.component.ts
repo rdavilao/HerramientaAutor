@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
 
     //ADD RESOURCE
     addResource() {
-        this.router.navigate(["/typography"]);
+        this.router.navigate(["/resources/add"]);
     }
 
     //PAGE STYLES AND FUNCTIONALY FUCTIONS
@@ -133,6 +133,16 @@ export class NavbarComponent implements OnInit {
       if(typeResource[2] == "PR") {        
         return 'Recursos - Privados';
       }
+      if(typeResource[2] == "add") {        
+        return 'Agregar Recurso';
+      }
+    }
+
+    resourcesLocation(): boolean {
+        if (this.getTitle() == 'Recursos - Públicos' || this.getTitle() == 'Recursos - Privados'){
+            return true;
+        }
+        return false;
     }
 
     logOut(): void {

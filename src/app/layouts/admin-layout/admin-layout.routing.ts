@@ -1,10 +1,9 @@
 import { Routes } from "@angular/router";
 
-import { DashboardComponent } from "../../dashboard/dashboard.component";
 import { UserProfileComponent } from "../../user-profile/user-profile.component";
 import { TableListComponent } from "../../table-list/table-list.component";
-import { TypographyComponent } from "../../typography/typography.component";
 import { NotificationsComponent } from "../../notifications/notifications.component";
+import { ResourcesComponent } from "app/resources/resources.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -49,9 +48,8 @@ export const AdminLayoutRoutes: Routes = [
   //         component: UpgradeComponent
   //     }]
   // }
-  { path: "dashboard/:typeResource", component: DashboardComponent },
+  { path: "resources/:typeResource", component: ResourcesComponent},
   { path: "user-profile", component: UserProfileComponent },
   { path: "table-list", component: TableListComponent },
-  { path: "typography", component: TypographyComponent },
   { path: "notifications", component: NotificationsComponent },
 ];
