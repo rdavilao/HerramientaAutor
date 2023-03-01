@@ -1,14 +1,19 @@
 <body>
 	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
-
+		<input type="checkbox" id="chk" aria-hidden="true" [(ngModel)]="formChecked" (change)="changeForm(formChecked? true:false)">
 			<div class="signup">
 				<form>
 					<label for="chk" aria-hidden="true">ACTIVITEA</label>
-					<input type="email" name="email" autocomplete="true" placeholder="Email" required="true" [(ngModel)]="loginRQ.email">
+					<input type="email" name="email" autocomplete="true" placeholder="Correo" required="true" [(ngModel)]="loginRQ.email">
 					<input type="password" name="pswd" autocomplete="true" placeholder="Contraseña" required="true" [(ngModel)]="loginRQ.pwd">
 					<button (click)="log()">Ingresar</button>
-				</form>
+				</form>				
+			<div *ngIf="flagNotif" class="notification">
+				<div class="alert alert-{{typeNotif}} alert-with-icon">
+					<i class="material-icons" data-notify="icon">{{iconNotif}}</i>
+                          <span data-notify="message">{{msgNotif}}</span>
+				</div>
+			</div>
 			</div>
 			<div class="login">
 				<form>
@@ -18,6 +23,13 @@
                     <input type="password" name="pswdConfirm" placeholder="Confirmar contraseña" required="true" [(ngModel)]="pwdConfirm">
 					<button (click)="signIn()">Registrar</button>
 				</form>
+				<div *ngIf="flagErrorNewUser" class="notification">
+					<div class="alert alert-danger alert-with-icon">
+						<i class="material-icons" data-notify="icon">cancel</i>
+							  <span data-notify="message">{{errorMsg}}</span>
+					</div>
+				</div>
 			</div>
 	</div>
 </body>
+

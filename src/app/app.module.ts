@@ -23,7 +23,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
