@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 import { NavbarComponent } from './navbar.component';
+
+const RouterSpy = jasmine.createSpyObj(
+  'Router',
+  ['navigate']
+);
+
+const mockRoute = { 
+  events: of({ test: 'test' }) 
+};
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -8,7 +19,11 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent ],
+      providers : [
+       { provide: Router, useValue: RouterSpy },
+       { provide: Router, useValue: mockRoute }
+      ]
     })
     .compileComponents();
   }));
