@@ -1,31 +1,37 @@
-.parent{
+.parent {
     height: 20vh;
 }
-.parent>.row{
+
+.parent>.row {
     display: flex;
     align-items: center;
     height: 100%;
 }
-.opt{
-    height:100%;
+
+.opt {
+    height: 100%;
     width: 100%;
     cursor: pointer;
     transition: transform 1s;
     object-fit: cover;
-    color:black;
+    color: black;
 }
-.col label{
+
+.col label {
     overflow: hidden;
     position: relative;
 }
-.imgbgchk:checked + label>.tick_container{
+
+.imgbgchk:checked+label>.tick_container {
     opacity: 1;
 }
+
 /*         aNIMATION */
-.imgbgchk:checked + label>img{
+.imgbgchk:checked+label>img {
     transform: scale(1.25);
     opacity: 0.3;
 }
+
 .tick_container {
     transition: .5s ease;
     opacity: 0;
@@ -37,6 +43,7 @@
     cursor: pointer;
     text-align: center;
 }
+
 .tick {
     background-color: #4CAF50;
     color: white;
@@ -46,6 +53,7 @@
     width: 40px;
     border-radius: 100%;
 }
+
 .file-name {
     margin-left: 1rem;
 }
@@ -54,3 +62,88 @@ ul {
     list-style-type: none;
     margin-top: 4px;
 }
+
+.combined-input {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1.34375em;    
+}
+
+.combined-input .combined-input-field {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.combined-input .text-input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+.file-input {
+    display: none;
+}
+
+.combined-input .file-label {
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.combined-input .file-label input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.combined-input .file-text {
+    color: gray;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.combined-input .file-text:hover {
+    color: #3F51B5;
+}
+
+.form-group.row {
+    padding-bottom: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .grid-row {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .grid-item {
+    flex: 1;
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

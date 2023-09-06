@@ -7,11 +7,9 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
-    { path: '/resources', title: 'Recursos',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+export const ROUTES: RouteInfo[] = [    
+    { path: '/resources/PU', title: 'Recursos Públicos', icon: 'public', class: ''},
+    { path: '/resources/PR', title: 'Recursos Privados', icon: 'lock', class: ''}
 ];
 
 @Component({

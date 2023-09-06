@@ -1,18 +1,19 @@
 <div class="logo">
-    <a href="https://www.creative-tim.com" class="simple-text">
-        <div class="logo-img">
-            <img src="../../../assets/resources/logoTEA.png"/>
-        </div>
-        ActiviTEA
-    </a>
+  <a href="/#/resources/PU" class="simple-text">
+    <div class="logo-img">
+      <img src="../../../assets/resources/logoTEA.png" />
+    </div>
+    ActiviTEA
+  </a>
 </div>
 <div class="sidebar-wrapper">
   <div *ngIf="isMobileMenu()">
     <ul class="nav navbar-nav nav-mobile-menu">
+      <!--
          <li class="nav-item dropdown">
             <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">notifications</i>
-                <!--<span class="notification">5</span> -->
+                <--<span class="notification">5</span> ->
                 <p>
                     <span class="d-lg-none d-md-block">Notifications</span>
                 </p>
@@ -25,33 +26,47 @@
                 <a class="dropdown-item" href="#">Another One</a>
             </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">person</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                </p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" (click)="logOut()">Cerrar sesión</a>
-            </div>
-        </li>
+    -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link"
+          href="javascript:void(0)"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="material-icons">person</i>
+          <p>
+            <span class="d-lg-none d-md-block">Account</span>
+          </p>
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <a class="dropdown-item" (click)="logOut()">Cerrar sesión</a>
+        </div>
+      </li>
     </ul>
   </div>
-    <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a *ngIf="menuItem.title=='Recursos'" class="nav-link" [routerLink]="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
-            </a>
-            <a *ngIf="menuItem.title!='Recursos'" class="nav-link" [routerLink]="[menuItem.path]" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink" *ngIf="menuItem.title=='Recursos'">
-                <a class="dropdown-item" [routerLink]="[menuItem.path, 'PR']">Privados</a>
-                <a class="dropdown-item" [routerLink]="[menuItem.path, 'PU']">Públicos</a>
-            </div>
-        </li>
-    </ul>
+  <ul class="nav">
+    <li
+      routerLinkActive="active"
+      *ngFor="let menuItem of menuItems"
+      class="{{ menuItem.class }} nav-item"
+    >
+      <a
+        *ngIf="menuItem.title != 'Recursos'"
+        class="nav-link"
+        [routerLink]="[menuItem.path]"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="material-icons">{{ menuItem.icon }}</i>
+        <p>{{ menuItem.title }}</p>
+      </a>
+    </li>
+  </ul>
 </div>

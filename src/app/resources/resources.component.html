@@ -1,465 +1,1591 @@
 <div class="main-content">
-    <div *ngIf="getTitle() == 'PU' || getTitle() == 'PR'" class="container-fluid">
-          <div class="row">
-              <div class="card-header card-header-danger" style="width: 100%; background-color: #00bcd4;">
-                  <h4 class="card-title" style="display: inline">CATEGORIA RECURSO l
-                      <h4 style="float:right"><i class="material-icons">looks_4</i>
-                      </h4>
-                  </h4>
-              </div>
-          </div>
-          <div class="row">  
-            <div class="col-md-4">
-                <div class="card card-chart">
-                    <div class="card-header card-header-success">
-                        <div class="ct-chart">
-                          <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                        </div> <!-- id="dailySalesChart" -->
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">RECURSO 1</h4>                      
-                    </div>
-                    <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                      </p>                                            
-                    </div>
-                    <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart">
-                        <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                      </div> <!-- id="dailySalesChart" -->
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">RECURSO 2</h4>                      
-                  </div>
-                  <div class="card-footer">
-                    <p style="width: 100%; height: 100%;">
-                        Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart">
-                        <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                      </div> <!-- id="dailySalesChart" -->
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">RECURSO 3</h4>                      
-                  </div>
-                  <div class="card-footer">
-                    <p style="width: 100%; height: 100%;">
-                        Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart">
-                        <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                      </div> <!-- id="dailySalesChart" -->
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">RECURSO 4</h4>                      
-                  </div>
-                  <div class="card-footer">
-                    <p style="width: 100%; height: 100%;">
-                        Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-              </div>
-          </div>
+  <div *ngIf="getTitle() == 'PU'" class="container-fluid">
+    <div class="show-data" *ngFor="let cat of pubResourcesType">
+      <div class="row">
+        <div
+          class="card-header card-header-danger"
+          style="width: 100%; background-color: #00bcd4"
+        >
+          <h4 class="card-title" style="display: inline">
+            <strong>{{ cat }}</strong>
+            <!--
+            <h4 style="float: right"><i class="material-icons">looks_4</i></h4>
+            -->
+          </h4>
         </div>
-        <div class="row">
-          <div class="card-header card-header-danger" style="width: 100%; background-color: #00bcd4;">
-              <h4 class="card-title">CATEGORIA RECURSO ll</h4>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart">
-                        <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                      </div> <!-- id="dailySalesChart" -->
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">RECURSO 1</h4>                      
-                  </div>
-                  <div class="card-footer">
-                    <p style="width: 100%; height: 100%;">
-                        Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-chart">
-                  <div class="card-header card-header-success">
-                      <div class="ct-chart">
-                        <img style="width: 100%; height: 100%;" src="../../assets/resources/imgNinos.png">
-                      </div> <!-- id="dailySalesChart" -->
-                  </div>
-                  <div class="card-body">
-                      <h4 class="card-title">RECURSO 2</h4>                      
-                  </div>
-                  <div class="card-footer">
-                    <p style="width: 100%; height: 100%;">
-                        Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...Descripción...
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                      <p style="width: 100%; height: 100%;">
-                          <button class="btn btn-info btn-sm">Editar</button>
-                          <button class="btn btn-success btn-sm" style="margin-left: 21px;">Asignar</button>
-                          <button class="btn btn-warning btn-sm" style="margin-left: 21px;">Duplicar</button>
-                          <button class="btn btn-danger btn-sm" style="margin-left: 21px;">Eliminar</button>
-                      </p>                                              
-                    </div>
-              </div>
-          </div>
       </div>
-    </div>
-    <div *ngIf="getTitle() == 'AD'" class="container-fluid">
-        <div class="card">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let res of structuredPubRes.get(cat)">
+          <div class="card card-chart">
             <div class="card-header card-header-success">
-                <h4 class="card-title">Crear Recurso</h4>
+              <div class="ct-chart">
+                <img
+                  style="width: 100%; height: 100%; max-height: 225px"
+                  src="http://localhost/{{ res.imgLocation }}"
+                />
+              </div>
+              <!-- id="dailySalesChart" -->
             </div>
             <div class="card-body">
-                <mat-stepper orientation="horizontal" [linear]="true" #stepper>
-                    <mat-step [stepControl]="firstFormGroup">
-                        <form [formGroup]="firstFormGroup">
-                          <ng-template matStepLabel>Crear desde</ng-template>
-                          <div class="container parent">
-                            <div class="row" style="margin-top: 25px;">
-                                <div class='col text-center'>
-                                <input type="radio" formControlName="typeR" [(ngModel)]="typeR" id="opt1" class="d-none imgbgchk" value="dg">
-                                  <label for="opt1">
-                                    <div class="opt">
-                                        <div>
-                                            <i class="material-icons" style="font-size: 50px; vertical-align: middle;">insert_drive_file</i>
-                                        </div>
-                                        <div>
-                                            <h3>Digital template</h3>
-                                        </div>
-                                    </div>
-                                    <div class="tick_container">
-                                      <div class="tick"><i class="fa fa-check"></i></div>
-                                    </div>
+              <h4 class="card-title">
+                {{ res.name }}
+                <i
+                  (click)="playResourceTitle(res.audioLocation)"
+                  class="material-icons"
+                  style="font-size: 25px; float: right; cursor: pointer"
+                  >volume_up</i
+                >
+              </h4>
+            </div>
+            <div class="card-footer">
+              <p style="width: 100%; height: 100%">
+                {{ res.description }}
+              </p>
+            </div>
+            <div class="card-footer">
+              <p style="width: 100%; height: 100%">
+                <button class="btn btn-info btn-sm">Editar</button>
+                <button
+                  class="btn btn-success btn-sm"
+                  style="margin-left: 21px"
+                >
+                  Asignar
+                </button>
+                <button
+                  class="btn btn-warning btn-sm"
+                  style="margin-left: 21px"
+                >
+                  Duplicar
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="getTitle() == 'PR'" class="container-fluid">
+    <div class="show-data" *ngFor="let cat of prResourcesType">
+      <div class="row">
+        <div
+          class="card-header card-header-danger"
+          style="width: 100%; background-color: #00bcd4"
+        >
+          <h4 class="card-title" style="display: inline">
+            <strong>{{ cat }}</strong>
+            <!--
+            <h4 style="float: right"><i class="material-icons">looks_4</i></h4>
+            -->
+          </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let res of structuredPrRes.get(cat)">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart">
+                <img
+                  style="width: 100%; height: 100%; max-height: 225px"
+                  src="http://localhost/{{ res.imgLocation }}"
+                />
+              </div>
+              <!-- id="dailySalesChart" -->
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">
+                {{ res.name }}
+                <i
+                  (click)="playResourceTitle(res.audioLocation)"
+                  class="material-icons"
+                  style="font-size: 25px; float: right; cursor: pointer"
+                  >volume_up</i
+                >
+              </h4>
+            </div>
+            <div class="card-footer">
+              <p style="width: 100%; height: 100%">
+                {{ res.description }}
+              </p>
+            </div>
+            <div class="card-footer">
+              <p style="width: 100%; height: 100%">
+                <button class="btn btn-info btn-sm">Editar</button>
+                <button
+                  class="btn btn-success btn-sm"
+                  style="margin-left: 21px"
+                >
+                  Asignar
+                </button>
+                <button
+                  class="btn btn-warning btn-sm"
+                  style="margin-left: 21px"
+                >
+                  Duplicar
+                </button>
+                <button class="btn btn-danger btn-sm" style="margin-left: 21px">
+                  Eliminar
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="getTitle() == 'AD'" class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-success">
+        <h4 class="card-title">Crear Recurso</h4>
+      </div>
+      <div class="card-body">
+        <mat-stepper orientation="horizontal" [linear]="optStepper" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Crear desde</ng-template>
+              <div class="container parent">
+                <div class="row" style="margin-top: 25px">
+                  <div class="col text-center">
+                    <input
+                      type="radio"
+                      formControlName="typeR"
+                      id="opt1"
+                      class="d-none imgbgchk"
+                      value="dg"
+                    />
+                    <label for="opt1">
+                      <div class="opt">
+                        <div>
+                          <i
+                            class="material-icons"
+                            style="font-size: 50px; vertical-align: middle"
+                            >insert_drive_file</i
+                          >
+                        </div>
+                        <div>
+                          <h3>Plantilla digitalizada</h3>
+                        </div>
+                      </div>
+                      <div class="tick_container">
+                        <div class="tick"><i class="fa fa-check"></i></div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col text-center">
+                    <input
+                      type="radio"
+                      formControlName="typeR"
+                      id="opt2"
+                      class="d-none imgbgchk"
+                      value="url"
+                    />
+                    <label for="opt2">
+                      <div class="opt">
+                        <div>
+                          <i class="material-icons" style="font-size: 50px"
+                            >link</i
+                          >
+                        </div>
+                        <div>
+                          <h3>URL</h3>
+                        </div>
+                      </div>
+                      <div class="tick_container">
+                        <div class="tick"><i class="fa fa-check"></i></div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col text-center">
+                    <input
+                      type="radio"
+                      formControlName="typeR"
+                      id="opt3"
+                      class="d-none imgbgchk"
+                      value="dt"
+                    />
+                    <label for="opt3">
+                      <div class="opt">
+                        <div>
+                          <i class="material-icons" style="font-size: 50px"
+                            >wallpaper</i
+                          >
+                        </div>
+                        <div>
+                          <h3>Plantilla predeterminada</h3>
+                        </div>
+                      </div>
+                      <div class="tick_container">
+                        <div class="tick"><i class="fa fa-check"></i></div>
+                      </div>
+                    </label>
+                  </div>
+                  <!--
+                  <div class="col text-center">
+                    <input
+                      type="radio"
+                      formControlName="typeR"
+                      id="opt4"
+                      class="d-none imgbgchk"
+                      value="sa"
+                    />
+                    <label for="opt4">
+                      <div class="opt">
+                        <div
+                          class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg"
+                        >
+                          <i class="material-icons" style="font-size: 50px"
+                            >group</i
+                          >
+                        </div>
+                        <div class="px-3">
+                          <h3 class="fw-bold mb-0">Supportive app</h3>
+                        </div>
+                      </div>
+                      <div class="tick_container">
+                        <div class="tick"><i class="fa fa-check"></i></div>
+                      </div>
+                    </label>
+                  </div>
+                  -->
+                </div>
+              </div>
+              <div *ngIf="firstFormGroup.get('typeR').invalid">
+                * Debe seleccionar una de las opciones para avanzar
+              </div>
+              <div style="margin-top: 50px">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  mat-button
+                  matStepperNext
+                  [disabled]="!firstFormGroup.valid"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Información</ng-template>
+              <mat-form-field
+                appearance="fill"
+                style="padding-bottom: 1.34375em"
+              >
+                <mat-label>Título del Recurso</mat-label>
+                <input matInput formControlName="titleR" required />
+              </mat-form-field>
+              <div style="margin-bottom: 15px">
+                <button
+                  style="background-color: rgb(0 0 0 / 5%)"
+                  mat-raised-button
+                  required
+                  (click)="AudioInput.click()"
+                >
+                  Cargar audio *
+                </button>
+                <input
+                  hidden
+                  (change)="onAudioSelected($event)"
+                  #AudioInput
+                  type="file"
+                  accept="audio/*"
+                />
+                <span class="file-name">{{ selectedAudio?.name }}</span>
+              </div>
+              <mat-form-field
+                appearance="fill"
+                style="padding-bottom: 1.34375em"
+              >
+                <mat-label>Descripción</mat-label>
+                <textarea
+                  matInput
+                  formControlName="descriptionR"
+                  required
+                ></textarea>
+              </mat-form-field>
+              <div style="margin-bottom: 15px">
+                <button
+                  style="background-color: rgb(0 0 0 / 5%)"
+                  mat-raised-button
+                  (click)="defineTagsR(tagsR)"
+                >
+                  Definir categoría *
+                </button>
+              </div>
+              <div
+                *ngIf="displayTagsR && displayTagsR.length > 0"
+                style="margin-bottom: 15px"
+              >
+                <label>Categoría: </label
+                ><button
+                  mat-raised-button
+                  disabled
+                  style="margin-left: 7px"
+                  *ngFor="let tag of displayTagsR"
+                >
+                  {{ tag }}
+                </button>
+              </div>
+              <mat-form-field
+                appearance="fill"
+                style="padding-bottom: 1.34375em"
+              >
+                <mat-label>Visibilidad Recurso</mat-label>
+                <mat-select formControlName="visibilityR" required>
+                  <mat-option value="PUBLIC">Público</mat-option>
+                  <mat-option value="PRIVATE">Privado</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div style="margin-bottom: 15px">
+                <button
+                  style="background-color: rgb(0 0 0 / 5%)"
+                  mat-raised-button
+                  (click)="ImageInput.click()"
+                >
+                  Cargar imagen *
+                </button>
+                <input
+                  hidden
+                  (change)="onImageSelected($event)"
+                  #ImageInput
+                  type="file"
+                  accept="image/*"
+                />
+                <span class="file-name">{{ selectedImage?.name }}</span>
+              </div>
+              <div
+                *ngIf="
+                  !(
+                    thirdFormGroup.valid &&
+                    selectedImage &&
+                    selectedAudio &&
+                    displayTagsR.length > 0
+                  )
+                "
+                style="margin-bottom: 20px; margin-top: 40px"
+              >
+                * Debe completar todos los campos para avanzar
+              </div>
+              <div>
+                <button mat-raised-button matStepperPrevious>Atrás</button>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  style="margin-left: 7px"
+                  matStepperNext
+                  [disabled]="
+                    !(
+                      thirdFormGroup.valid &&
+                      selectedImage &&
+                      selectedAudio &&
+                      displayTagsR.length > 0
+                    )
+                  "
+                >
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Diseño</ng-template>
+              <!--
+              <div style="float: right">
+                <button
+                  mat-raised-button
+                  style="
+                    color: white;
+                    background-color: #3f51b5;
+                    width: fit-content;
+                    height: fit-content;
+                    margin-bottom: 10px;
+                  "
+                  matTooltip="Vista Previa"
+                  [matTooltipPosition]="'left'"
+                >
+                  <i class="material-icons">remove_red_eye</i>
+                </button>
+              </div>
+              -->
+              <mat-form-field
+                appearance="fill"
+                style="padding-bottom: 1.34375em"
+              >
+                <mat-label>Instrucción</mat-label>
+                <textarea
+                  matInput
+                  formControlName="instruction"
+                  placeholder="Detalle la instrucción a realizar con el recurso."
+                ></textarea>
+              </mat-form-field>
+            </form>
+            <div #dg *ngIf="firstFormGroup.get('typeR')?.value == 'dg'">
+              <form [formGroup]="formDG">
+                <mat-form-field
+                  appearance="fill"
+                  style="padding-bottom: 1.34375em"
+                >
+                  <mat-label>Tipo de actividad</mat-label>
+                  <mat-select formControlName="activityType" required>
+                    <mat-option
+                      *ngFor="let activiy of currentActivitiesSupported"
+                      [value]="activiy.name"
+                      >{{ activiy.name }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+                <div style="margin-bottom: 15px">
+                  <button
+                    style="background-color: rgb(0 0 0 / 5%)"
+                    mat-raised-button
+                    (click)="DGFileInput.click()"
+                  >
+                    Cargar archivo*
+                  </button>
+                  <input
+                    hidden
+                    (change)="onFileDGSelected($event)"
+                    #DGFileInput
+                    type="file"
+                    accept="image/*, .txt, .doc, .pdf"
+                  />
+                  <span class="file-name">{{ fileDG?.name }}</span>
+                </div>
+              </form>
+              <div style="margin-top: 30px">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  style="margin-left: 7px; margin-bottom: 10px"
+                  [disabled]="
+                    !(
+                      fileDG &&
+                      formDG.get('activityType')?.value != '' &&
+                      formDG.get('activityType')?.value != null
+                    )
+                  "
+                  (click)="processFile()"
+                >
+                  Procesar archivo
+                </button>
+                <div *ngIf="dataConfigFileDG != null && dataConfigFileDG != ''">
+                  <div class="grid-container">
+                    <div
+                      *ngFor="let data of dataConfigFileDG; let i = index"
+                      class="grid-row"
+                    >
+                      <input
+                        class="grid-item"
+                        [(ngModel)]="data.data"
+                        [ngStyle]="
+                          data.used
+                            ? { 'background-color': 'rgb(166, 234, 166)' }
+                            : {}
+                        "
+                      />
+                      <mat-form-field
+                        style="width: 70px; margin-right: 4px"
+                        appearance="outline"
+                      >
+                        <mat-label>
+                          <i class="material-icons">edit</i>
+                        </mat-label>
+                        <mat-select
+                          matInput
+                          [name]="'type' + i"
+                          class="select-field"
+                          [(ngModel)]="data.type"
+                          (ngModelChange)="buildActivity(data.data, data.type)"
+                          >Definir tipo
+                          <mat-option
+                            *ngIf="
+                              formDG.get('activityType')?.value ==
+                              'Une las correspondencias'
+                            "
+                            value="key"
+                            >Clave</mat-option
+                          >
+                          <mat-option
+                            *ngIf="
+                              formDG.get('activityType')?.value == 'Categorizar'
+                            "
+                            value="cat"
+                            >Categoría</mat-option
+                          >
+                          <mat-option
+                            *ngFor="let cat of catsDefined"
+                            value="element/{{ cat }}"
+                            >Elemento de: {{ cat }}</mat-option
+                          >
+                          <mat-option
+                            *ngFor="let key of keysDefined"
+                            value="definition/{{ key }}"
+                            >Definición de: {{ key }}</mat-option
+                          >
+                        </mat-select>
+                      </mat-form-field>
+                      <button
+                        class="delete-button"
+                        matTooltipPosition="above"
+                        matTooltip="Eliminar registro"
+                        (click)="removeItem(data.data)"
+                      >
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="row"
+                  *ngIf="
+                    formDG.get('activityType')?.value &&
+                    dataConfigFileDG != null &&
+                    dataConfigFileDG != ''
+                  "
+                  style="padding-left: 15px"
+                >
+                  <label>Actividad: &nbsp;</label>
+                  <label style="color: #3f51b5"
+                    ><strong>{{
+                      formDG.get("activityType")?.value
+                    }}</strong></label
+                  >
+                </div>
+                <div
+                  *ngIf="
+                    formDG.get('activityType')?.value == 'Categorizar' &&
+                    dataConfigFileDG != null &&
+                    dataConfigFileDG != ''
+                  "
+                >
+                  <form [formGroup]="formActivity">
+                    <div formArrayName="catActivity">
+                      <div
+                        *ngFor="
+                          let category of catActivity.controls;
+                          let i = index
+                        "
+                        [formGroupName]="i"
+                      >
+                        <div class="form-group row">
+                          <div
+                            class="col-md-1"
+                            style="
+                              font-size: 100px;
+                              align-items: center;
+                              color: black;
+                              font-weight: bold;
+                              margin-top: 10px;
+                            "
+                          >
+                            <h5>{{ i + 1 + " )" }}</h5>
+                          </div>
+                          <div class="col-md-5">
+                            <div class="combined-input">
+                              <mat-form-field
+                                appearance="fill"
+                                class="combined-input-field"
+                              >
+                                <mat-label>Categoría*</mat-label>
+                                <input
+                                  id="category{{ i }}"
+                                  matInput
+                                  formControlName="category"
+                                  placeholder="Ingresa la categoría"
+                                />
+                              </mat-form-field>
+                              <div class="file-inputs">
+                                <label
+                                  for="imageFileCategory{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="imageFileCategory{{ i }}"
+                                    formControlName="categoryImg"
+                                    accept="image/*"
+                                    class="file-input"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'imageFileCategory' + i
+                                      )
+                                    "
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      category.get('categoryImg').value !== null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons">image</i></span
+                                  >
+                                </label>
+                                <label
+                                  for="audioFileCategory{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="audioFileCategory{{ i }}"
+                                    accept="audio/*"
+                                    formControlName="categoryAudio"
+                                    class="file-input"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'audioFileCategory' + i
+                                      )
+                                    "
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      category.get('categoryAudio').value !==
+                                      null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons"
+                                      >volume_up</i
+                                    ></span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <button
+                              mat-raised-button
+                              color="primary"
+                              (click)="addDataCategoryElement(category)"
+                            >
+                              Añadir elemento
+                            </button>
+                            <button
+                              mat-raised-button
+                              style="margin-left: 10px"
+                              color="warn"
+                              (click)="deleteDataCatActivity(i)"
+                            >
+                              Eliminar categoría
+                            </button>
+                          </div>
+                        </div>
+                        <div formArrayName="elements">
+                          <div
+                            *ngFor="
+                              let element of getCategoryElements(category);
+                              let j = index
+                            "
+                            [formGroupName]="j"
+                          >
+                            <div class="form-group row">
+                              <div class="col-md-1"></div>
+                              <div
+                                class="col-md-1"
+                                style="
+                                  font-size: 100px;
+                                  align-items: center;
+                                  color: black;
+                                  font-weight: bold;
+                                  margin-top: 10px;
+                                "
+                              >
+                                <h5>{{ i + 1 + "." + (j + 1) + " )" }}</h5>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="combined-input">
+                                  <mat-form-field
+                                    appearance="fill"
+                                    class="combined-input-field"
+                                  >
+                                    <mat-label>Elemento*</mat-label>
+                                    <input
+                                      matInput
+                                      id="element{{ i }}{{ j }}"
+                                      formControlName="element"
+                                      placeholder="Ingresa el elemento de la categoría"
+                                    />
+                                  </mat-form-field>
+                                  <div class="file-inputs">
+                                    <label
+                                      for="imageFileElement{{ i }}{{ j }}"
+                                      class="file-label"
+                                    >
+                                      <input
+                                        type="file"
+                                        id="imageFileElement{{ i }}{{ j }}"
+                                        formControlName="elementImg"
+                                        accept="image/*"
+                                        (change)="
+                                          onFilesActivity(
+                                            $event,
+                                            'imageFileElement' + i + '-' + j
+                                          )
+                                        "
+                                        class="file-input"
+                                      />
+                                      <span
+                                        class="file-text"
+                                        [ngStyle]="
+                                          element.get('elementImg').value !==
+                                          null
+                                            ? { color: '#4CAf50' }
+                                            : {}
+                                        "
+                                        ><i class="material-icons"
+                                          >image</i
+                                        ></span
+                                      >
                                     </label>
-                                </div>
-                                <div class='col text-center'>
-                                <input type="radio" formControlName="typeR" [(ngModel)]="typeR" id="opt2" class="d-none imgbgchk" value="url">
-                                  <label for="opt2">
-                                    <div class="opt">
-                                        <div>
-                                            <i class="material-icons" style="font-size: 50px;">link</i></div>
-                                        <div>
-                                            <h3>URL</h3>
-                                        </div>
-                                    </div>
-                                    <div class="tick_container">
-                                      <div class="tick"><i class="fa fa-check"></i></div>
-                                    </div>
-                                  </label>
-                                </div>
-                                <div class='col text-center'>
-                                <input type="radio" formControlName="typeR" [(ngModel)]="typeR" id="opt3" class="d-none imgbgchk" value="dt">
-                                  <label for="opt3">
-                                    <div class="opt">
-                                        <div>
-                                            <i class="material-icons" style="font-size: 50px;">wallpaper</i></div>
-                                        <div>
-                                            <h3>Default Template</h3>
-                                        </div>
-                                    </div>
-                                    <div class="tick_container">
-                                      <div class="tick"><i class="fa fa-check"></i></div>
-                                    </div>
-                                  </label>
-                                </div>
-                                <div class='col text-center'>
-                                <input type="radio" formControlName="typeR" [(ngModel)]="typeR" id="opt4" class="d-none imgbgchk" value="sa">
-                                    <label for="opt4">
-                                        <div class="opt">
-                                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-2 bs-icon lg">
-                                                <i class="material-icons" style="font-size: 50px;">group</i></div>
-                                            <div class="px-3">
-                                                <h3 class="fw-bold mb-0">Supportive app</h3>
-                                            </div>
-                                        </div>
-                                      <div class="tick_container">
-                                        <div class="tick"><i class="fa fa-check"></i></div>
-                                      </div>
+                                    <label
+                                      for="audioFileElement{{ i }}{{ j }}"
+                                      class="file-label"
+                                    >
+                                      <input
+                                        type="file"
+                                        id="audioFileElement{{ i }}{{ j }}"
+                                        accept="audio/*"
+                                        formControlName="elementAudio"
+                                        (change)="
+                                          onFilesActivity(
+                                            $event,
+                                            'audioFileElement' + i + '-' + j
+                                          )
+                                        "
+                                        class="file-input"
+                                      />
+                                      <span
+                                        class="file-text"
+                                        [ngStyle]="
+                                          element.get('elementAudio').value !==
+                                          null
+                                            ? { color: '#4CAf50' }
+                                            : {}
+                                        "
+                                        ><i class="material-icons"
+                                          >volume_up</i
+                                        ></span
+                                      >
                                     </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <button
+                                  mat-raised-button
+                                  color="warn"
+                                  (click)="
+                                    deleteDataCategoryElemeny(category, j)
+                                  "
+                                >
+                                  Remover
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="addDataCatActivity()"
+                  >
+                    Añadir categoría
+                  </button>
+                </div>
+                <div
+                  *ngIf="
+                    formDG.get('activityType')?.value ==
+                      'Une las correspondencias' &&
+                    dataConfigFileDG != null &&
+                    dataConfigFileDG != ''
+                  "
+                >
+                  <form [formGroup]="formActivity">
+                    <div formArrayName="unirCActivity">
+                      <div
+                        *ngFor="
+                          let data of unirCActivity.controls;
+                          let i = index
+                        "
+                        [formGroupName]="i"
+                      >
+                        <div class="form-group row">
+                          <div
+                            class="col-md-1"
+                            style="
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              color: black;
+                              font-weight: bold;
+                            "
+                          >
+                            <h5>{{ i + 1 + " )" }}</h5>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="combined-input">
+                              <mat-form-field
+                                appearance="fill"
+                                class="combined-input-field"
+                              >
+                                <mat-label>Clave*</mat-label>
+                                <input
+                                  id="key{{ i }}"
+                                  matInput
+                                  formControlName="key"
+                                  placeholder="Ingresa la clave"
+                                />
+                              </mat-form-field>
+                              <div class="file-inputs">
+                                <label
+                                  for="imageFileKey{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="imageFileKey{{ i }}"
+                                    formControlName="keyImg"
+                                    accept="image/*"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'imageFileKey' + i
+                                      )
+                                    "
+                                    class="file-input"
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      data.get('keyImg').value !== null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons">image</i></span
+                                  >
+                                </label>
+                                <label
+                                  for="audioFileKey{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="audioFileKey{{ i }}"
+                                    accept="audio/*"
+                                    formControlName="keyAudio"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'audioFileKey' + i
+                                      )
+                                    "
+                                    class="file-input"
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      data.get('keyAudio').value !== null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons"
+                                      >volume_up</i
+                                    ></span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <div class="combined-input">
+                              <mat-form-field
+                                appearance="fill"
+                                class="combined-input-field"
+                              >
+                                <mat-label>Definición*</mat-label>
+                                <input
+                                  matInput
+                                  id="definition{{ i }}"
+                                  formControlName="definition"
+                                  placeholder="Ingresa la definición la clave"
+                                />
+                              </mat-form-field>
+                              <div class="file-inputs">
+                                <label
+                                  for="imageFileDefinition{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="imageFileDefinition{{ i }}"
+                                    formControlName="definitionImg"
+                                    accept="image/*"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'imageFileDefinition' + i
+                                      )
+                                    "
+                                    class="file-input"
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      data.get('definitionImg').value !== null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons">image</i></span
+                                  >
+                                </label>
+                                <label
+                                  for="audioFileDefinition{{ i }}"
+                                  class="file-label"
+                                >
+                                  <input
+                                    type="file"
+                                    id="audioFileDefinition{{ i }}"
+                                    accept="audio/*"
+                                    formControlName="definitionAudio"
+                                    (change)="
+                                      onFilesActivity(
+                                        $event,
+                                        'audioFileDefinition' + i
+                                      )
+                                    "
+                                    class="file-input"
+                                  />
+                                  <span
+                                    class="file-text"
+                                    [ngStyle]="
+                                      data.get('definitionAudio').value !== null
+                                        ? { color: '#4CAf50' }
+                                        : {}
+                                    "
+                                    ><i class="material-icons"
+                                      >volume_up</i
+                                    ></span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <button
+                              mat-raised-button
+                              color="warn"
+                              (click)="deleteDataUnirCActivityDG(i)"
+                            >
+                              Remover
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="addDataUnirCActivity()"
+                  >
+                    Añadir item
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div #url *ngIf="firstFormGroup.get('typeR')?.value == 'url'">
+              <form [formGroup]="formUrl">
+                <mat-form-field
+                  appearance="fill"
+                  style="padding-bottom: 1.34375em"
+                >
+                  <mat-label>URL</mat-label>
+                  <input
+                    matInput
+                    formControlName="url"
+                    placeholder="https://www.google.es/"
+                    required
+                  />
+                </mat-form-field>
+              </form>
+            </div>
+            <div #dt *ngIf="firstFormGroup.get('typeR')?.value == 'dt'">
+              <div style="width: 100%; height: 100%" *ngIf="!dtSelected">
+                <div class="row">
+                  <div
+                    class="col-md-4"
+                    style="cursor: pointer"
+                    *ngFor="let activiy of currentActivitiesSupported"
+                  >
+                    <div
+                      class="card"
+                      (click)="dtSelectedTemplate(activiy.name)"
+                    >
+                      <div class="card-header card-header-success">
+                        <h4 class="card-title">{{ activiy.name }}</h4>
+                      </div>
+                      <div class="card-body">{{ activiy.description }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row"
+                *ngIf="dtSelected && dtNameSelected"
+                style="padding-left: 15px"
+              >
+                <label>Actividad: &nbsp;</label>
+                <label style="color: #3f51b5"
+                  ><strong>{{ dtNameSelected }}</strong></label
+                >
+              </div>
+              <div *ngIf="dtSelected && dtNameSelected == 'Categorizar'">
+                <form [formGroup]="formActivity">
+                  <div formArrayName="catActivity">
+                    <div
+                      *ngFor="
+                        let category of catActivity.controls;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
+                      <div class="form-group row">
+                        <div
+                          class="col-md-1"
+                          style="
+                            font-size: 100px;
+                            align-items: center;
+                            color: black;
+                            font-weight: bold;
+                            margin-top: 10px;
+                          "
+                        >
+                          <h5>{{ i + 1 + " )" }}</h5>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="combined-input">
+                            <mat-form-field
+                              appearance="fill"
+                              class="combined-input-field"
+                            >
+                              <mat-label>Categoría*</mat-label>
+                              <input
+                                id="category{{ i }}"
+                                matInput
+                                formControlName="category"
+                                placeholder="Ingresa la categoría"
+                              />
+                            </mat-form-field>
+                            <div class="file-inputs">
+                              <label
+                                for="imageFileCategory{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="imageFileCategory{{ i }}"
+                                  formControlName="categoryImg"
+                                  accept="image/*"
+                                  class="file-input"
+                                  (change)="
+                                    onFilesActivity(
+                                      $event,
+                                      'imageFileCategory' + i
+                                    )
+                                  "
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    category.get('categoryImg').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">image</i></span
+                                >
+                              </label>
+                              <label
+                                for="audioFileCategory{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="audioFileCategory{{ i }}"
+                                  accept="audio/*"
+                                  formControlName="categoryAudio"
+                                  class="file-input"
+                                  (change)="
+                                    onFilesActivity(
+                                      $event,
+                                      'audioFileCategory' + i
+                                    )
+                                  "
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    category.get('categoryAudio').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">volume_up</i></span
+                                >
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <button
+                            mat-raised-button
+                            color="primary"
+                            (click)="addDataCategoryElement(category)"
+                          >
+                            Añadir elemento
+                          </button>
+                          <button
+                            mat-raised-button
+                            style="margin-left: 10px"
+                            color="warn"
+                            (click)="deleteDataCatActivity(i)"
+                          >
+                            Eliminar categoría
+                          </button>
+                        </div>
+                      </div>
+                      <div formArrayName="elements">
+                        <div
+                          *ngFor="
+                            let element of getCategoryElements(category);
+                            let j = index
+                          "
+                          [formGroupName]="j"
+                        >
+                          <div class="form-group row">
+                            <div class="col-md-1"></div>
+                            <div
+                              class="col-md-1"
+                              style="
+                                font-size: 100px;
+                                align-items: center;
+                                color: black;
+                                font-weight: bold;
+                                margin-top: 10px;
+                              "
+                            >
+                              <h5>{{ i + 1 + "." + (j + 1) + " )" }}</h5>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="combined-input">
+                                <mat-form-field
+                                  appearance="fill"
+                                  class="combined-input-field"
+                                >
+                                  <mat-label>Elemento*</mat-label>
+                                  <input
+                                    matInput
+                                    id="element{{ i }}{{ j }}"
+                                    formControlName="element"
+                                    placeholder="Ingresa el elemento de la categoría"
+                                  />
+                                </mat-form-field>
+                                <div class="file-inputs">
+                                  <label
+                                    for="imageFileElement{{ i }}{{ j }}"
+                                    class="file-label"
+                                  >
+                                    <input
+                                      type="file"
+                                      id="imageFileElement{{ i }}{{ j }}"
+                                      formControlName="elementImg"
+                                      accept="image/*"
+                                      (change)="
+                                        onFilesActivity(
+                                          $event,
+                                          'imageFileElement' + i + '-' + j
+                                        )
+                                      "
+                                      class="file-input"
+                                    />
+                                    <span
+                                      class="file-text"
+                                      [ngStyle]="
+                                        element.get('elementImg').value !== null
+                                          ? { color: '#4CAf50' }
+                                          : {}
+                                      "
+                                      ><i class="material-icons">image</i></span
+                                    >
+                                  </label>
+                                  <label
+                                    for="audioFileElement{{ i }}{{ j }}"
+                                    class="file-label"
+                                  >
+                                    <input
+                                      type="file"
+                                      id="audioFileElement{{ i }}{{ j }}"
+                                      accept="audio/*"
+                                      formControlName="elementAudio"
+                                      (change)="
+                                        onFilesActivity(
+                                          $event,
+                                          'audioFileElement' + i + '-' + j
+                                        )
+                                      "
+                                      class="file-input"
+                                    />
+                                    <span
+                                      class="file-text"
+                                      [ngStyle]="
+                                        element.get('elementAudio').value !==
+                                        null
+                                          ? { color: '#4CAf50' }
+                                          : {}
+                                      "
+                                      ><i class="material-icons"
+                                        >volume_up</i
+                                      ></span
+                                    >
+                                  </label>
                                 </div>
                               </div>
                             </div>
-                          <div style="margin-top: 50px;">
-                            <button mat-raised-button color="primary" mat-button matStepperNext>Siguiente</button>
+                            <div class="col-md-2">
+                              <button
+                                mat-raised-button
+                                color="warn"
+                                (click)="deleteDataCategoryElemeny(category, j)"
+                              >
+                                Remover
+                              </button>
+                            </div>
                           </div>
-                        </form>
-                    </mat-step>
-                     <mat-step [stepControl]="thirdFormGroup">
-                      <form [formGroup]="thirdFormGroup">
-                        <ng-template matStepLabel>Información</ng-template>
-                        <mat-form-field appearance="fill">
-                          <mat-label>Título del Recurso</mat-label>
-                          <input matInput formControlName="titleR" required>
-                        </mat-form-field>
-                        <div style="margin-bottom: 15px;">
-                        <button style="background-color: rgb(0 0 0 / 5%);" mat-raised-button (click)="AudioInput.click()">Cargar audio</button>
-                        <input hidden (change)="onAudioSelected($event)" #AudioInput type="file">
-                        <span class="file-name">{{selectedAudio?.name}}</span>
                         </div>
-                        <mat-form-field appearance="fill">                        
-                        <mat-label>Descripción</mat-label>
-                        <textarea matInput formControlName="descriptionR" required></textarea>
-                        </mat-form-field> 
-                        <div style="margin-bottom: 15px;">
-                        <button style="background-color: rgb(0 0 0 / 5%);" mat-raised-button (click)="defineTagsR(tagsR)">Definir categoría</button>                    
-                        </div>
-                        <div *ngIf="displayTagsR.length > 0" style="margin-bottom: 15px;">
-                            <label>Categoría: </label><button mat-raised-button disabled style="margin-left: 7px;" *ngFor="let tag of displayTagsR">{{tag}}</button> 
-                        </div>                  
-                        <mat-form-field appearance="fill">
-                            <mat-label>Visibilidad Recurso</mat-label>
-                            <mat-select formControlName="visibilityR" [(ngModel)]="visibilityR" required>
-                              <mat-option value="Público">Público</mat-option>
-                              <mat-option value="Privado">Privado</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        <div style="margin-bottom: 15px;">
-                        <button style="background-color: rgb(0 0 0 / 5%);" mat-raised-button (click)="ImageInput.click()">Cargar imagen</button>
-                        <input hidden (change)="onImageSelected($event)" #ImageInput type="file">
-                        <span class="file-name">{{selectedImage?.name}}</span>                    
-                        </div>
-                        <div>
-                            <button mat-raised-button matStepperPrevious>Atrás</button>
-                            <button mat-raised-button color="primary" style="margin-left: 7px;" matStepperNext>Siguiente</button>
-                        </div>
-                      </form>
-                    </mat-step>
-                    <mat-step [stepControl]="secondFormGroup">
-                        <form [formGroup]="secondFormGroup">
-                          <ng-template matStepLabel>Diseño</ng-template>                      
-                          <div style="float: right;">
-                            <button mat-raised-button style="color: white; background-color: #3F51B5; width: fit-content; height: fit-content; margin-bottom: 10px;"matTooltip="Vista Previa" [matTooltipPosition]="'left'"><i class="material-icons">remove_red_eye</i></button>
-                          </div>
-                          <mat-form-field appearance="fill">
-                            <mat-label>Instrucción</mat-label>
-                            <textarea matInput formControlName="instruction" placeholder="Detalle la instrucción a realizar con el recurso."></textarea>
-                          </mat-form-field>
-                          <div #dg *ngIf="typeR == 'dg'">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Address</mat-label>
-                                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                                       required>
-                              </mat-form-field>
-                          </div>
-                          <div #dg *ngIf="typeR == 'url'">
-                            <mat-form-field appearance="fill">
-                                <mat-label>URL</mat-label>
-                                <input matInput formControlName="secondCtrl" placeholder="https://www.google.es/"
-                                       required>
-                              </mat-form-field>
-                          </div>
-                          <div #dg *ngIf="typeR == 'dt'">
-                                <div style="width: 100%; height: 100%;" *ngIf="!dtSelected">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="card" (click)="dtSelectedTemplate('Cuestionario')">
-                                                <div class="card-header card-header-success">
-                                                    <h4 class="card-title">Cuestionario</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    ...
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="card" (click)="dtSelectedTemplate('Sopa de letras')">
-                                                <div class="card-header card-header-success">
-                                                    <h4 class="card-title">Sopa de letras</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    ...
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="card" (click)="dtSelectedTemplate('Actividad 3')">
-                                                <div class="card-header card-header-success">
-                                                    <h4 class="card-title">Actividad 3</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    ...
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="card" (click)="dtSelectedTemplate('Actividad 4')">
-                                                <div class="card-header card-header-success">
-                                                    <h4 class="card-title">Actividad 4</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    ...
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div *ngIf="dtSelected && dtNameSelected == 'Sopa de letras'">
-                                    <div class="from-group">
-                                        <mat-checkbox style="margin: 0 12px; color:black;" (click)="changePista()">Habilitar Pistas</mat-checkbox>
-                                    </div>
-                                    <div class="form-group">
-                                        <button mat-raised-button color="primary" (click)="addDataSopaLetras()">Añadir palabra</button>
-                                    </div>
-                                    <div formArrayName="sopaLetras" *ngFor="let data of sopaLetras.controls; let i = index">
-                                        <div [formGroupName]="i">
-                                            <div class="form-group row">
-                                                <div class="col-md-3">
-                                                    <mat-form-field appearance="fill">
-                                                        <mat-label>Palabra</mat-label>
-                                                        <input matInput [attr.id]="'palabra'+i" formControlName="palabra" placeholder="Palabra presente en la sopa de letras">
-                                                    </mat-form-field>
-                                                </div>    
-                                                <div class="col-md-5" *ngIf="pistasSL">
-                                                    <mat-form-field appearance="fill">
-                                                        <mat-label>Pista</mat-label>
-                                                        <input matInput [attr.id]="'pista'+i" formControlName="pista" placeholder="Pista para encontrar la palabra">
-                                                    </mat-form-field>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <button mat-raised-button color="warn" (click)="deleteDataSopaLetras(i)">Remover</button>
-                                                </div>                                            
-                                            </div>
-                                        </div>
-                                    </div>                                
-                                </div>
-                                <div *ngIf="dtSelected && dtNameSelected == 'Cuestionario'">
-                                    <div class="from-group">
-                                        <mat-checkbox style="margin: 0 12px; color:black;" (click)="changePista()">Habilitar Pistas</mat-checkbox>
-                                    </div>
-                                    <div class="form-group">
-                                        <button mat-raised-button color="primary" (click)="addDataSopaLetras()">Añadir palabra</button>
-                                    </div>
-                                    <div formArrayName="sopaLetras" *ngFor="let data of sopaLetras.controls; let i = index">
-                                        <div [formGroupName]="i">
-                                            <div class="form-group row">
-                                                <div class="col-md-3">
-                                                    <mat-form-field appearance="fill">
-                                                        <mat-label>Palabra</mat-label>
-                                                        <input matInput [attr.id]="'palabra'+i" formControlName="palabra" placeholder="Palabra presente en la sopa de letras">
-                                                    </mat-form-field>
-                                                </div>    
-                                                <div class="col-md-5" *ngIf="pistasSL">
-                                                    <mat-form-field appearance="fill">
-                                                        <mat-label>Pista</mat-label>
-                                                        <input matInput [attr.id]="'pista'+i" formControlName="pista" placeholder="Pista para encontrar la palabra">
-                                                    </mat-form-field>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <button mat-raised-button colot="warn" (click)="deleteDataSopaLetras(i)">Remover</button>
-                                                </div>                                            
-                                            </div>
-                                        </div>
-                                    </div>                                
-                                </div>
-                          </div>
-                          <div #dg *ngIf="typeR == 'sa'">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Address</mat-label>
-                                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                                       required>
-                              </mat-form-field>
-                          </div>
-                          <div>
-                            <button mat-raised-button matStepperPrevious>Atrás</button>
-                            <button mat-raised-button color="primary" style="margin-left: 7px;" matStepperNext>Siguiente</button>
-                          </div>
-                        </form>
-                      </mat-step>
-                                   
-                    <mat-step>
-                      <ng-template matStepLabel>Crear</ng-template>
-                      <p>¿Desea crear el recurso?</p>
-                      <div>
-                        <button mat-raised-button matStepperPrevious>Atrás</button>
-                        <button mat-raised-button color="primary" style="margin-left: 7px;" matStepperNext>Crear</button>
-                        <button style="float:right;" mat-raised-button color="warn" (click)="stepper.reset()">Resetear</button>
                       </div>
-                    </mat-step>
-                  </mat-stepper>
+                    </div>
+                  </div>
+                </form>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="addDataCatActivity()"
+                >
+                  Añadir categoría
+                </button>
+              </div>
+              <div
+                *ngIf="
+                  dtSelected && dtNameSelected == 'Une las correspondencias'
+                "
+              >
+                <form [formGroup]="formActivity">
+                  <div formArrayName="unirCActivity">
+                    <div
+                      *ngFor="let data of unirCActivity.controls; let i = index"
+                      [formGroupName]="i"
+                    >
+                      <div class="form-group row">
+                        <div
+                          class="col-md-1"
+                          style="
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: black;
+                            font-weight: bold;
+                          "
+                        >
+                          <h5>{{ i + 1 + " )" }}</h5>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="combined-input">
+                            <mat-form-field
+                              appearance="fill"
+                              class="combined-input-field"
+                            >
+                              <mat-label>Clave*</mat-label>
+                              <input
+                                id="key{{ i }}"
+                                matInput
+                                formControlName="key"
+                                placeholder="Ingresa la clave"
+                              />
+                            </mat-form-field>
+                            <div class="file-inputs">
+                              <label
+                                for="imageFileKey{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="imageFileKey{{ i }}"
+                                  formControlName="keyImg"
+                                  accept="image/*"
+                                  (change)="
+                                    onFilesActivity($event, 'imageFileKey' + i)
+                                  "
+                                  class="file-input"
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    data.get('keyImg').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">image</i></span
+                                >
+                              </label>
+                              <label
+                                for="audioFileKey{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="audioFileKey{{ i }}"
+                                  accept="audio/*"
+                                  formControlName="keyAudio"
+                                  (change)="
+                                    onFilesActivity($event, 'audioFileKey' + i)
+                                  "
+                                  class="file-input"
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    data.get('keyAudio').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">volume_up</i></span
+                                >
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="combined-input">
+                            <mat-form-field
+                              appearance="fill"
+                              class="combined-input-field"
+                            >
+                              <mat-label>Definición*</mat-label>
+                              <input
+                                matInput
+                                id="definition{{ i }}"
+                                formControlName="definition"
+                                placeholder="Ingresa la definición la clave"
+                              />
+                            </mat-form-field>
+                            <div class="file-inputs">
+                              <label
+                                for="imageFileDefinition{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="imageFileDefinition{{ i }}"
+                                  formControlName="definitionImg"
+                                  accept="image/*"
+                                  (change)="
+                                    onFilesActivity(
+                                      $event,
+                                      'imageFileDefinition' + i
+                                    )
+                                  "
+                                  class="file-input"
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    data.get('definitionImg').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">image</i></span
+                                >
+                              </label>
+                              <label
+                                for="audioFileDefinition{{ i }}"
+                                class="file-label"
+                              >
+                                <input
+                                  type="file"
+                                  id="audioFileDefinition{{ i }}"
+                                  accept="audio/*"
+                                  formControlName="definitionAudio"
+                                  (change)="
+                                    onFilesActivity(
+                                      $event,
+                                      'audioFileDefinition' + i
+                                    )
+                                  "
+                                  class="file-input"
+                                />
+                                <span
+                                  class="file-text"
+                                  [ngStyle]="
+                                    data.get('definitionAudio').value !== null
+                                      ? { color: '#4CAf50' }
+                                      : {}
+                                  "
+                                  ><i class="material-icons">volume_up</i></span
+                                >
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <button
+                            mat-raised-button
+                            color="warn"
+                            (click)="deleteDataUnirCActivity(i)"
+                          >
+                            Remover
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="addDataUnirCActivity()"
+                >
+                  Añadir item
+                </button>
+              </div>
+              <div
+                *ngIf="dtSelected && dtNameSelected != ''"
+                style="margin-top: 50px"
+              >
+                <button
+                  mat-raised-button
+                  color="warn"
+                  style="float: right"
+                  (click)="changeTemplate()"
+                >
+                  Cambiar plantilla
+                </button>
+              </div>
             </div>
-        </div>
+            <!--
+              <div #dg *ngIf="typeR == 'sa'">
+                <mat-form-field appearance="fill">
+                  <mat-label>Address</mat-label>
+                  <input
+                    matInput
+                    formControlName="secondCtrl"
+                    placeholder="Ex. 1 Main St, New York, NY"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              -->
+            <div *ngIf="verifyDesignActivity()" style="margin-top: 15px;">
+              * Debe completar todos los campos para avanzar
+            </div>
+            <div style="margin-top: 30px">
+              <button mat-raised-button matStepperPrevious>Atrás</button>
+              <button
+                mat-raised-button
+                color="primary"
+                style="margin-left: 7px"
+                [disabled]="verifyDesignActivity()"
+                matStepperNext
+              >
+                Siguiente
+              </button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Crear</ng-template>
+            <p>¿Desea crear el recurso?</p>
+            <div>
+              <button mat-raised-button matStepperPrevious>Atrás</button>
+              <button
+                mat-raised-button
+                color="primary"
+                style="margin-left: 7px"
+                matStepperNext
+                (click)="createResource()"
+              >
+                Crear
+              </button>
+              <button
+                style="float: right"
+                mat-raised-button
+                color="warn"
+                (click)="reloadPage()"
+              >
+                Resetear
+              </button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+      </div>
     </div>
+  </div>
 </div>
 <ng-template #tagsR>
-    <h2 matDialogTitle>Categorías Recursos</h2>
+  <h2 matDialogTitle>Categorías</h2>
   <mat-dialog-content>
     <p>Escoge las categorías que corresponan al recurso por crear:</p>
     <span class="example-list-section">
-        <ul>
-          <li *ngFor="let tag of tagsExample">
-            <mat-checkbox [(ngModel)]="tag.completed"
-                          color="primary"
-                          (ngModelChange)="addTagsR(0)">
-              {{tag.name}}
-            </mat-checkbox>
-          </li>
-        </ul>
-      </span>
+      <ul>
+        <li *ngFor="let tag of allTagsRes">
+          <mat-checkbox
+            [(ngModel)]="tag.completed"
+            color="primary"
+            (ngModelChange)="addTagsR(0)"
+          >
+            {{ tag.name }}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+    <div
+      class="row"
+      style="display: flex; align-content: center; align-items: center"
+    >
+      <div class="col-md-10">
+        <mat-form-field appearance="fill">
+          <mat-label>Categoría</mat-label>
+          <input matInput type="text" [(ngModel)]="newTag" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-2">
+        <button
+          mat-raised-button
+          (click)="addTagsR(3)"
+          style="float: left"
+          [disabled]="!(newTag && newTag != '')"
+        >
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-raised-button matDialogClose (click)="addTagsR(1)" color="primary">Añadir</button>
-    <button mat-raised-button matDialogClose (click)="addTagsR(2)" color="warn">Cerrar</button>
+    <button
+      mat-raised-button
+      matDialogClose
+      (click)="addTagsR(1)"
+      color="primary"
+    >
+      Aplicar
+    </button>
+    <button mat-raised-button matDialogClose (click)="addTagsR(2)" color="warn">
+      Cerrar
+    </button>
   </mat-dialog-actions>
 </ng-template>
